@@ -23,6 +23,21 @@ namespace WpfApp2
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            var targetTextBox = sender as TextBox;
+            int amount;
+            bool success = int.TryParse(targetTextBox.Text, out amount);
+            if (!success)
+            {
+                MessageBox.Show("請輸入正整數", "輸入錯誤");
+            }
+            else if (amount <= 0) 
+            {
+                MessageBox.Show("請輸入正整數", "輸入錯誤");
+            }
+            else
+            {
+                
+            }
 
         }
     }

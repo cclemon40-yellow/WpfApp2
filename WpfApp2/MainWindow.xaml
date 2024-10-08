@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="741">
+        Title="飲料點餐系統var1" Height="450" Width="741">
     <Grid Margin="0,0,32,0">
         <StackPanel RenderTransformOrigin="-0.931,-0.785" Margin="10,10,195,104" Background="#FFE0D697">
             <StackPanel Height="45" Background="#FFEFEDED" Width="490" HorizontalAlignment="Center" Margin="5,5,5,0" Orientation="Horizontal">
