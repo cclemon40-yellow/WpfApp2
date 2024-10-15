@@ -5,70 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="飲料點餐系統var1" Height="552" Width="712">
+        Title="飲料點餐系統var3" Height="552" Width="712">
     <Grid Margin="0,0,2,0">
-        <StackPanel RenderTransformOrigin="-0.931,-0.785" Margin="10,10,195,188" Background="#FFE0D697">
-            <StackPanel Height="45" Background="#FFEFEDED" Width="490" HorizontalAlignment="Center" Margin="5,5,5,0" Orientation="Horizontal">
-                <Label Content="紅茶大杯" FontSize="14" Width="78" Height="34" HorizontalContentAlignment="Center" 
-                       VerticalContentAlignment="Center" Background="Transparent" Foreground="#FFE22323" FontWeight="Bold"/>
-                <Label Content="60元" FontSize="14" Width="85" HorizontalContentAlignment="Center" 
-                       VerticalContentAlignment="Center" />
-                <Slider x:Name="slider1" Width="216" VerticalAlignment="Center" Margin="49,0,10,0" Minimum="1" IsSnapToTickEnabled="True"/>
-                <Label Content="{Binding Value, ElementName=slider1}" VerticalContentAlignment="Center" FontSize="14" Width="36" Background="{x:Null}" Foreground="#FFF13838"/>
-            </StackPanel>
-            <StackPanel Height="45" Background="#FFEFEDED" Width="490" HorizontalAlignment="Center" Margin="5,5,5,0" Orientation="Horizontal">
-                <Label Content="紅茶小杯" FontSize="14" Width="78" Height="34" HorizontalContentAlignment="Center" 
-           VerticalContentAlignment="Center" Background="Transparent" Foreground="#FFE22323" FontWeight="Bold"/>
-                <Label Content="40元" FontSize="14" Width="85" HorizontalContentAlignment="Center" 
-           VerticalContentAlignment="Center" />
-                <Slider x:Name="slider2" Width="216" VerticalAlignment="Center" Margin="49,0,10,0" Minimum="1" IsSnapToTickEnabled="True"/>
-                <Label Content="{Binding Value, ElementName=slider2}" VerticalContentAlignment="Center" FontSize="14" Width="36" Background="{x:Null}" Foreground="#FFF13838"/>
-            </StackPanel>
-            <StackPanel Height="45" Background="#FFEFEDED" Width="490" HorizontalAlignment="Center" Margin="5,5,5,0" Orientation="Horizontal">
-                <Label Content="綠茶大杯" FontSize="14" Width="78" Height="34" HorizontalContentAlignment="Center" 
-            VerticalContentAlignment="Center" Background="Transparent" Foreground="#FFE22323" FontWeight="Bold"/>
-                <Label Content="60元" FontSize="14" Width="85" HorizontalContentAlignment="Center" 
-            VerticalContentAlignment="Center" />
-                <Slider x:Name="slider3" Width="216" VerticalAlignment="Center" Margin="49,0,10,0" Minimum="1" IsSnapToTickEnabled="True"/>
-                <Label Content="{Binding Value, ElementName=slider3}" VerticalContentAlignment="Center" FontSize="14" Width="36" Background="{x:Null}" Foreground="#FFF13838"/>
-            </StackPanel>
-            <StackPanel Height="45" Background="#FFEFEDED" Width="490" HorizontalAlignment="Center" Margin="5,5,5,0" Orientation="Horizontal">
-                <Label Content="綠茶小杯" FontSize="14" Width="78" Height="34" HorizontalContentAlignment="Center" 
-            VerticalContentAlignment="Center" Background="Transparent" Foreground="#FFE22323" FontWeight="Bold"/>
-                <Label Content="40元" FontSize="14" Width="85" HorizontalContentAlignment="Center" 
-            VerticalContentAlignment="Center" />
-                <Slider x:Name="slider4" Width="216" VerticalAlignment="Center" Margin="49,0,10,0" Minimum="1" IsSnapToTickEnabled="True"/>
-                <Label Content="{Binding Value, ElementName=slider4}" VerticalContentAlignment="Center" FontSize="14" Width="36" Background="{x:Null}" Foreground="#FFF13838"/>
-            </StackPanel>
-            <StackPanel Height="45" Background="#FFEFEDED" Width="490" HorizontalAlignment="Center" Margin="5,5,5,0" Orientation="Horizontal">
-                <Label Content="奶茶大杯" FontSize="14" Width="78" Height="34" HorizontalContentAlignment="Center" 
-            VerticalContentAlignment="Center" Background="Transparent" Foreground="#FFE22323" FontWeight="Bold"/>
-                <Label Content="80元" FontSize="14" Width="85" HorizontalContentAlignment="Center" 
-            VerticalContentAlignment="Center" />
-                <Slider x:Name="slider5" Width="216" VerticalAlignment="Center" Margin="49,0,10,0" Minimum="1" IsSnapToTickEnabled="True"/>
-                <Label Content="{Binding Value, ElementName=slider5}" VerticalContentAlignment="Center" FontSize="14" Width="36" Background="{x:Null}" Foreground="#FFF13838"/>
-            </StackPanel>
-            <StackPanel Height="45" Background="#FFEFEDED" Width="490" HorizontalAlignment="Center" Margin="5,5,5,0" Orientation="Horizontal">
-                <Label Content="奶茶小杯" FontSize="14" Width="78" Height="34" HorizontalContentAlignment="Center" 
-            VerticalContentAlignment="Center" Background="Transparent" Foreground="#FFE22323" FontWeight="Bold"/>
-                <Label Content="60元" FontSize="14" Width="85" HorizontalContentAlignment="Center" 
-            VerticalContentAlignment="Center" />
-                <Slider x:Name="slider6" Width="216" VerticalAlignment="Center" Margin="49,0,10,0" Minimum="1" IsSnapToTickEnabled="True"/>
-                <Label Content="{Binding Value, ElementName=slider6}" VerticalContentAlignment="Center" FontSize="14" Width="36" Background="{x:Null}" Foreground="#FFF13838"/>
-            </StackPanel>
+        <StackPanel x:Name="stackpanel_DrinkMenu" RenderTransformOrigin="-0.931,-0.785" Margin="10,10,195,188" Background="#FFE0D697"/>
+        <Button x:Name="Olderbutton" Content="確認訂購" HorizontalAlignment="Left" Margin="535,21,0,0"
+                VerticalAlignment="Top" Height="57" Width="140" FontWeight="Bold" FontSize="18"/>
+        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Center" Margin="5,358,5,5" TextWrapping="Wrap"
+                   Height="167" Width="687" Background="#FFD8C687" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top"/>
 
-        </StackPanel>
-        <Button x:Name="Olderbutton" Content="確認訂購" HorizontalAlignment="Left" Margin="535,21,0,0" VerticalAlignment="Top" Height="57" Width="140" FontWeight="Bold" FontSize="18"/>
-        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Center" Margin="5,358,5,5" TextWrapping="Wrap" Height="167" Width="687" Background="#FFD8C687" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
 
     </Grid>
 </Window>
