@@ -29,6 +29,7 @@ namespace WpfApp2
                 {"咖啡大杯",70 },
                 {"咖啡小杯",50 }
             };
+            string takeout = "";
             public MainWindow()
             {
                 InitializeComponent();
@@ -98,7 +99,12 @@ namespace WpfApp2
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            var rb = sender as RadioButton;
+            if (rb.IsChecked == true)
+            {
+                takeout = rb.Content.ToString();
+                MessageBox.Show($"方式:{takeout}");
+            }
         }
     }
 }
