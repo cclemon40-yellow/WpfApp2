@@ -5,13 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="飲料點餐系統var3" Height="552" Width="712">
-    <Grid Margin="0,0,2,0">
-        <StackPanel x:Name="stackpanel_DrinkMenu" RenderTransformOrigin="-0.931,-0.785" Margin="10,10,195,188" Background="#FFE0D697"/>
-        <Button x:Name="Olderbutton" Content="確認訂購" HorizontalAlignment="Left" Margin="535,21,0,0"
+        Title="飲料點餐系統var3" Height="640" Width="800">
+    <Grid Margin="0,0,23,17">
+        <StackPanel x:Name="stackpanel_DrinkMenu" RenderTransformOrigin="-0.931,-0.785" Margin="24,104,209,187" Background="#FFE0D697" Width="544" Height="316.76"/>
+        <Button x:Name="Olderbutton" Content="確認訂購" HorizontalAlignment="Left" Margin="596,30,0,0"
                 VerticalAlignment="Top" Height="57" Width="140" FontWeight="Bold" FontSize="18"/>
-        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Center" Margin="5,358,5,5" TextWrapping="Wrap"
-                   Height="167" Width="687" Background="#FFD8C687" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Left" Margin="24,438,0,0" TextWrapping="Wrap"
+                   Height="166" Width="732" Background="#FFD8C687" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top"/>
+        <GroupBox Header="內用/外帶" Margin="24,11,213,513" RenderTransformOrigin="0.43,0.074" Foreground="Black" BorderBrush="#FFE4E9EC" Background="#FFE2C6C6" UseLayoutRounding="False" Width="540" Height="83.76">
+            <StackPanel Orientation="Horizontal" Width="528" Height="61.52">
+                <RadioButton Content="內用" Checked="RadioButton_Checked" FontSize="18" Margin="20,0,0,0" Width="100" VerticalContentAlignment="Center"/>
+                <RadioButton Content="外帶" Checked="RadioButton_Checked" FontSize="18" Margin="20,0,0,0" Width="100" VerticalContentAlignment="Center"/>
+            </StackPanel>
+        </GroupBox>
 
 
     </Grid>

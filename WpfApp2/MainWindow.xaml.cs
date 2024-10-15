@@ -24,8 +24,10 @@ namespace WpfApp2
                 {"紅茶小杯",40 },
                 {"綠茶大杯",60 },
                 {"綠茶小杯",40 },
-                {"可熱大杯",50 },
-                {"可熱小杯",30 },
+                {"可樂大杯",50 },
+                {"可樂小杯",30 },
+                {"咖啡大杯",70 },
+                {"咖啡小杯",50 }
             };
             public MainWindow()
             {
@@ -37,13 +39,15 @@ namespace WpfApp2
 
         private void DisplayDrinkMenu(Dictionary<string, int> drinks)
             {
+            stackpanel_DrinkMenu.Children.Clear();
+            stackpanel_DrinkMenu.Height = drinks.Count * 40;
                 foreach(var drink in drinks)
                 {
                     var sp = new StackPanel
                     {
                         Orientation = Orientation.Horizontal,
-                        Margin = new Thickness(3),
-                        Height = 40,
+                        Margin = new Thickness(2),
+                        Height = 35,
                         VerticalAlignment = VerticalAlignment.Center,
                         Background = Brushes.AliceBlue
                     };
@@ -88,9 +92,13 @@ namespace WpfApp2
                     sp.Children.Add(lb);
 
                     stackpanel_DrinkMenu.Children.Add(sp);
-                    stackpanel_DrinkMenu.Height = drinks.Count * 40;
+                    
                 }
             }
-        
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
