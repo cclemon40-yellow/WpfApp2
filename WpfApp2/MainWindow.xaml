@@ -11,7 +11,7 @@
         <Button x:Name="OlderButton" Content="確認訂購" HorizontalAlignment="Left" Margin="596,30,0,0"
                 VerticalAlignment="Top" Height="57" Width="140" FontWeight="Bold" FontSize="18" Click="OlderButton_Click"/>
         <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Left" Margin="24,471,0,0" TextWrapping="Wrap"
-                   Height="166" Width="732" Background="#FFD8C687" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top"/>
+                   Height="166" Width="732" Background="#FFD8C687" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" FontSize="18"/>
         <GroupBox Header="內用/外帶" Margin="24,10,251,572" RenderTransformOrigin="0.43,0.074" Foreground="Black" BorderBrush="#FFE4E9EC" Background="#FFE2C6C6" UseLayoutRounding="False">
             <StackPanel Orientation="Horizontal" Height="42" Margin="0,0,47,0">
                 <RadioButton Content="內用" Checked="RadioButton_Checked" FontSize="18" Margin="20,0,0,0" Width="100" VerticalContentAlignment="Center"/>
