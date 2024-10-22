@@ -5,29 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="741">
-    <Grid Margin="0,0,32,0">
-        <StackPanel RenderTransformOrigin="-0.931,-0.785" Margin="10,10,195,104" Background="#FFE0D697">
-            <StackPanel Height="45" Background="#FFEFEDED" Width="490" HorizontalAlignment="Center" Margin="5,5,5,0" Orientation="Horizontal">
-                <Label Content="紅茶大杯" FontSize="14" Width="78" Height="34" HorizontalContentAlignment="Center" 
-                       VerticalContentAlignment="Center" Background="Transparent" Foreground="#FFE22323" FontWeight="Bold"/>
-                <Label Content="60元" FontSize="14" Width="85" HorizontalContentAlignment="Center" 
-                       VerticalContentAlignment="Center" />
-                <TextBox TextWrapping="Wrap" Width="316" Height="40" VerticalAlignment="Center" 
-                         HorizontalContentAlignment="Right" FontSize="14" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged"/>
+        Title="飲料點餐系統ver3" Height="765" Width="932">
+    <Grid Margin="0,0,23,17">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="241*"/>
+            <ColumnDefinition Width="62*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="107*"/>
+            <RowDefinition Height="393*"/>
+            <RowDefinition Height="233*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="stackpanel_DrinkMenu" RenderTransformOrigin="-0.931,-0.785" Margin="27,11,0,0" Background="#FFE0D697" Grid.Row="1" Height="365" VerticalAlignment="Top" Width="679" HorizontalAlignment="Left"/>
+        <Button x:Name="OlderButton" Content="確認訂購" Margin="14,37,0,0"
+                VerticalAlignment="Top" Height="57" FontWeight="Bold" FontSize="18" Click="OlderButton_Click" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="140"/>
+        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Left" Margin="27,11,0,0" TextWrapping="Wrap" Width="848" Background="#FFD8C687" RenderTransformOrigin="0.5,0.5" FontSize="18" Grid.Row="2" Grid.ColumnSpan="2" Height="210" VerticalAlignment="Top"/>
+        <GroupBox Header="內用/外帶" Margin="24,10,0,23" RenderTransformOrigin="0.43,0.074" Foreground="Black" BorderBrush="#FFE4E9EC" Background="#FFE2C6C6" UseLayoutRounding="False" Width="852" Height="73" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal" Height="42" Margin="0,0,47,0">
+                <RadioButton Content="內用" Checked="RadioButton_Checked" FontSize="18" Margin="20,0,0,0" Width="100" VerticalContentAlignment="Center"/>
+                <RadioButton Content="外帶" Checked="RadioButton_Checked" FontSize="18" Margin="20,0,0,0" Width="100" VerticalContentAlignment="Center"/>
             </StackPanel>
-            <StackPanel Height="45" Background="#FFEFEDED" Width="490" HorizontalAlignment="Center" Margin="5,5,5,0" Orientation="Horizontal">
-                <Label Content="紅茶小杯" FontSize="14" Width="78" Height="34" HorizontalContentAlignment="Center" 
-           VerticalContentAlignment="Center" Background="Transparent" Foreground="#FFE22323" FontWeight="Bold"/>
-                <Label Content="40元" FontSize="14" Width="85" HorizontalContentAlignment="Center" 
-           VerticalContentAlignment="Center" />
-                <TextBox TextWrapping="Wrap" Width="316" Height="40" VerticalAlignment="Center" 
-             HorizontalContentAlignment="Right" FontSize="14" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged"/>
-            </StackPanel>
+        </GroupBox>
 
-
-        </StackPanel>
-        <Button x:Name="Olderbutton" Content="確認訂購" HorizontalAlignment="Left" Margin="541,16,0,0" VerticalAlignment="Top" Height="57" Width="140" FontWeight="Bold" FontSize="18"/>
 
     </Grid>
 </Window>
