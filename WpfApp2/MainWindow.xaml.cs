@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Microsoft.Win32;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -14,17 +15,8 @@ namespace WpfApp2
     public partial class MainWindow : Window
     {
         // 飲料菜單，包含飲料名稱和價格
-        Dictionary<string, int> drinks = new Dictionary<string, int>
-        {
-            {"紅茶大杯",60 },
-            {"紅茶小杯",40 },
-            {"綠茶大杯",60 },
-            {"綠茶小杯",40 },
-            {"可樂大杯",50 },
-            {"可樂小杯",30 },
-            {"咖啡大杯",70 },
-            {"咖啡小杯",50 }
-        };
+        Dictionary<string, int> drinks = new Dictionary<string, int>();
+        
 
         // 訂單，包含飲料名稱和數量
         Dictionary<string, int> orders = new Dictionary<string, int>();
@@ -34,6 +26,23 @@ namespace WpfApp2
         {
             InitializeComponent();
             DisplayDrinkMenu(drinks); // 顯示飲料菜單
+            AddNewDrink(drinks);
+        }
+
+        private void AddNewDrink(Dictionary<string, int> drinks)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "CSV檔案|*.csv|文字檔案|*.txt|所有檔案|*.*";
+            if(openFileDialog.ShowDialog() == true)
+            {
+                string fileName = openFileDialog.FileName;
+                ReadDrinksFromFile(fileName, drinks);
+            }
+        }
+
+        private void ReadDrinksFromFile(string fileName, Dictionary<string, int> drinks)
+        {
+            throw new NotImplementedException();
         }
 
         // 顯示飲料菜單
