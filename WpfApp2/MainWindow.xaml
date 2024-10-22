@@ -5,14 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="飲料點餐系統var3" Height="716" Width="870">
+        Title="飲料點餐系統ver3" Height="765" Width="932">
     <Grid Margin="0,0,23,17">
-        <StackPanel x:Name="stackpanel_DrinkMenu" RenderTransformOrigin="-0.931,-0.785" Margin="24,99,211,234" Background="#FFE0D697"/>
-        <Button x:Name="OlderButton" Content="確認訂購" HorizontalAlignment="Left" Margin="596,30,0,0"
-                VerticalAlignment="Top" Height="57" Width="140" FontWeight="Bold" FontSize="18" Click="OlderButton_Click"/>
-        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Left" Margin="24,471,0,0" TextWrapping="Wrap"
-                   Height="166" Width="732" Background="#FFD8C687" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" FontSize="18"/>
-        <GroupBox Header="內用/外帶" Margin="24,10,251,572" RenderTransformOrigin="0.43,0.074" Foreground="Black" BorderBrush="#FFE4E9EC" Background="#FFE2C6C6" UseLayoutRounding="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="241*"/>
+            <ColumnDefinition Width="62*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="107*"/>
+            <RowDefinition Height="393*"/>
+            <RowDefinition Height="233*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="stackpanel_DrinkMenu" RenderTransformOrigin="-0.931,-0.785" Margin="27,11,0,0" Background="#FFE0D697" Grid.Row="1" Height="365" VerticalAlignment="Top" Width="679" HorizontalAlignment="Left"/>
+        <Button x:Name="OlderButton" Content="確認訂購" Margin="14,37,0,0"
+                VerticalAlignment="Top" Height="57" FontWeight="Bold" FontSize="18" Click="OlderButton_Click" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="140"/>
+        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Left" Margin="27,11,0,0" TextWrapping="Wrap" Width="848" Background="#FFD8C687" RenderTransformOrigin="0.5,0.5" FontSize="18" Grid.Row="2" Grid.ColumnSpan="2" Height="210" VerticalAlignment="Top"/>
+        <GroupBox Header="內用/外帶" Margin="24,10,0,23" RenderTransformOrigin="0.43,0.074" Foreground="Black" BorderBrush="#FFE4E9EC" Background="#FFE2C6C6" UseLayoutRounding="False" Width="852" Height="73" HorizontalAlignment="Left" Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal" Height="42" Margin="0,0,47,0">
                 <RadioButton Content="內用" Checked="RadioButton_Checked" FontSize="18" Margin="20,0,0,0" Width="100" VerticalContentAlignment="Center"/>
                 <RadioButton Content="外帶" Checked="RadioButton_Checked" FontSize="18" Margin="20,0,0,0" Width="100" VerticalContentAlignment="Center"/>
