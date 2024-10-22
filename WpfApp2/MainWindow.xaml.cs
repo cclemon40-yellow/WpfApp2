@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,7 +18,6 @@ namespace WpfApp2
         // 飲料菜單，包含飲料名稱和價格
         Dictionary<string, int> drinks = new Dictionary<string, int>();
         
-
         // 訂單，包含飲料名稱和數量
         Dictionary<string, int> orders = new Dictionary<string, int>();
         string takeout = ""; // 取餐方式
@@ -25,15 +25,18 @@ namespace WpfApp2
         public MainWindow()
         {
             InitializeComponent();
-            DisplayDrinkMenu(drinks); // 顯示飲料菜單
+
             AddNewDrink(drinks);
+
+            DisplayDrinkMenu(drinks);
         }
 
         private void AddNewDrink(Dictionary<string, int> drinks)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "CSV檔案|*.csv|文字檔案|*.txt|所有檔案|*.*";
-            if(openFileDialog.ShowDialog() == true)
+            openFileDialog.Title = "選擇飲料菜單檔案";
+            if (openFileDialog.ShowDialog() == true)
             {
                 string fileName = openFileDialog.FileName;
                 ReadDrinksFromFile(fileName, drinks);
@@ -42,7 +45,21 @@ namespace WpfApp2
 
         private void ReadDrinksFromFile(string fileName, Dictionary<string, int> drinks)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string[] lines = File.ReadAllLines(fileName);
+                foreach (var line in lines)
+                {
+                    string[] tokens = line.Split(',');
+                    string drinkName = tokens[0];
+                    int price = Convert.ToInt32(tokens[1]);
+                    drinks.Add(drinkName, price);
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show($"讀取檔案時發生錯誤: {ex.Message}");
+            }
         }
 
         // 顯示飲料菜單
@@ -134,12 +151,16 @@ namespace WpfApp2
                     orders.Add(drinkName, int.Parse(lb.Content.ToString())); // 加入訂單
                 }
             }
+            
 
             // 顯示訂單細項，並計算金額
             double total = 0.0; // 總金額
             double sellPrice = 0.0; // 折扣後金額
 
-            ResultTextBlock.Text += $"取餐方式:{takeout}\n"; // 顯示取餐方式
+            string orderMessage = "";
+            DateTime now = DateTime.Now;
+            orderMessage += $"訂購時間: {now.ToString("yyyy/MM/dd HH:mm:ss")}\n";
+            orderMessage += $"取餐方式: {takeout}\n"; ;
 
             int num = 1;
             foreach (var item in orders)
@@ -171,8 +192,33 @@ namespace WpfApp2
                 sellPrice = total;
             }
 
-            ResultTextBlock.Text += $"總金額:{total}元\n"; // 顯示總金額
-            ResultTextBlock.Text += $"{discoutMessage}，需付金額:{sellPrice}元\n"; // 顯示折扣訊息和折扣後金額
+            orderMessage += $"總金額: {total}元\n";
+            orderMessage += $"{discoutMessage}，實付金額: {sellPrice}元\n";
+            ResultTextBlock.Text = orderMessage;
+            SaveOrder(orderMessage);
+        }
+        private void SaveOrder(string orderMessage)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "文字檔案|*.txt|所有檔案|*.*";
+            saveFileDialog.Title = "儲存訂單";
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                string fileName = saveFileDialog.FileName;
+
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(fileName))
+                    {
+                        sw.Write(orderMessage);
+                    }
+                    MessageBox.Show("訂單已成功儲存。");
+                }
+                catch (IOException ex)
+                {
+                    MessageBox.Show($"儲存檔案時發生錯誤: {ex.Message}");
+                }
+            }
         }
     }
 }
