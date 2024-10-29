@@ -39,7 +39,7 @@ namespace WpfApp2
             if (openFileDialog.ShowDialog() == true)
             {
                 string fileName = openFileDialog.FileName;
-                ReadDrinksFromFile(fileName, drinks);
+                ReadDrinksFromFile(fileName, drinks); //從指定的檔案中讀取飲料菜單並將其加入到 drinks 
             }
         }
 
